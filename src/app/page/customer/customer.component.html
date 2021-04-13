@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-success">Add new customer</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>rating</th>
+                    <th>address</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let customer of customers$ | async">
+                    <td>{{customer.id}}</td>
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.rating}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="onDelete(customer)">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
