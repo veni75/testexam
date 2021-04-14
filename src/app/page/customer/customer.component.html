@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12">
-        <button class="btn btn-success">Add new customer</button>
-        <table class="table">
+        <button class="btn btn-success" [routerLink]="['customer/' + 0]"><i class="fa fa-edit"></i>Add new customer</button>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>id</th>
@@ -20,6 +20,9 @@
                     <td>{{customer.rating}}</td>
                     <td>{{customer.address}}</td>
                     <td>
+                        <button class="btn btn-primary" [routerLink]="['customer/'+customer.id]">
+                            <i class="fa fa-edit" aria-hidden="true"></i>
+                        </button>
                         <button class="btn btn-danger" (click)="onDelete(customer)">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </button>

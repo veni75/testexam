@@ -4,7 +4,8 @@ import { CustomerEditorComponent } from './page/customer-editor/customer-editor.
 import { CustomerComponent } from './page/customer/customer.component';
 
 const routes: Routes = [
-  { path: 'customer', component: CustomerComponent },
+  { path: '', component: CustomerComponent },
+  
   { path: 'customer/:id', component: CustomerEditorComponent },
   { path: '**', component: CustomerComponent },
 ];

@@ -22,14 +22,14 @@ export class CustomerService {
   }
 
   create(customer:Customer): Observable<Customer> {
-    return this.http.put<Customer>(this.server, customer);
+    return this.http.post<Customer>(this.server, customer);
   }
 
   update(customer:Customer): Observable<Customer> {
-    return this.http.patch<Customer>(this.server, customer);
+    return this.http.patch<Customer>(`${this.server}/${customer.id}`, customer);
   }
 
-  delete(customer:Customer): Observable<Customer> {
+  remove(customer:Customer): Observable<Customer> {
     return this.http.delete<Customer>(`${this.server}/${customer.id}`);
   }
 }
