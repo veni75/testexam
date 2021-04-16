@@ -28,10 +28,4 @@ export class CustomerComponent implements OnInit {
     );
   }
 
-  onUpdate(customer: Customer) {
-    
-    this.customerService.update(customer).subscribe(
-      p => this.customers$ = this.customerService.getAll()
-    );
-  }
 }
